@@ -10,6 +10,10 @@
     --win-title: #000080;
     --primary: #FFD700;
     --secondary: #FF8C00;
+    --glass-bg: rgba(192, 192, 192, 0.95);
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.2);
+    --shadow-hover: 0 12px 48px rgba(0, 0, 0, 0.3);
 }
 
 * {
