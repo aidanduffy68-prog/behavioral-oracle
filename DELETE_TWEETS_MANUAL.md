@@ -12,48 +12,32 @@
 3. **Paste this code:**
 
 ```javascript
-// Auto-delete tweets as you scroll
-// Stops at tweets from Sept 10, 2025 or later
-
-const CUTOFF_DATE = new Date('2025-09-10');
+let deleted = 0;
 
 function deleteTweets() {
-  let deleted = 0;
-  
-  // Find all tweet menus
   document.querySelectorAll('[data-testid="caret"]').forEach(button => {
     button.click();
-    
     setTimeout(() => {
-      // Click delete option
       document.querySelectorAll('[role="menuitem"]').forEach(item => {
         if (item.innerText.includes('Delete')) {
           item.click();
-          
           setTimeout(() => {
-            // Confirm deletion
             const confirmBtn = document.querySelector('[data-testid="confirmationSheetConfirm"]');
             if (confirmBtn) {
               confirmBtn.click();
               deleted++;
-              console.log(`Deleted ${deleted} tweets`);
+              console.log('Deleted ' + deleted + ' tweets');
             }
           }, 500);
         }
       });
     }, 500);
   });
-  
-  // Scroll down to load more tweets
   window.scrollTo(0, document.body.scrollHeight);
 }
 
-// Run every 3 seconds
 const interval = setInterval(deleteTweets, 3000);
-
-// To stop: clearInterval(interval)
-console.log('Auto-delete started. Scroll down to load older tweets.');
-console.log('To stop: clearInterval(interval)');
+console.log('Auto-delete started. To stop: clearInterval(interval)');
 ```
 
 4. **Press Enter**
