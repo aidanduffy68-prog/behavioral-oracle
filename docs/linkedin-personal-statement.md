@@ -61,7 +61,7 @@ Built for traders who are tired of the same game.
 
 ## Option 4: The Honest One
 
-October 10, 2024: $19B liquidations. Biggest in crypto history.
+October 10, 2025: $19B liquidations. Biggest in crypto history.
 
 I'd been building FRY Protocol for months. Deployed to mainnet the day before.
 

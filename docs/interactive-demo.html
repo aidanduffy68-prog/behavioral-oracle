@@ -415,10 +415,10 @@
                 🚀 LIVE ON ARBITRUM MAINNET | Launched Oct 11, 2025 | <a href="https://arbiscan.io/address/0x492397d5912C016F49768fBc942d894687c5fe33" target="_blank">View Contracts</a>
             </div>
             <h2>💀 Wreckage Processing Simulator 💀</h2>
-            <p style="margin-bottom: 15px; font-style: italic; color: #666;">turn your L's into W's (kinda)</p>
+            <p style="margin-bottom: 15px; font-style: italic; color: #666;">cope harder, earn FRY</p>
             
             <div style="margin-bottom: 15px;">
-                <label style="display: block; margin-bottom: 8px; font-weight: 500;">Which coin rekt you today?</label>
+                <label style="display: block; margin-bottom: 8px; font-weight: 500;">confess your sins:</label>
                 <div class="coin-selector">
                     <button class="coin-btn active" onclick="selectCoin('BTC', this)">
                         <span class="coin-emoji">₿</span> BTC
@@ -436,7 +436,7 @@
             </div>
             
             <div style="margin-bottom: 20px;">
-                <label style="display: block; margin-bottom: 8px; font-weight: 500;">How much did you lose? (be honest)</label>
+                <label style="display: block; margin-bottom: 8px; font-weight: 500;">how much? (we won't judge... much)</label>
                 <div style="display: flex; gap: 10px; align-items: center;">
                     <input type="number" id="customAmount" placeholder="Enter amount..." 
                            style="flex: 1; padding: 10px; border: 2px solid rgba(102, 126, 234, 0.3); border-radius: 8px; font-size: 14px;"
@@ -446,18 +446,18 @@
             </div>
             
             <div class="controls">
-                <button class="button" onclick="processWreckage(1000)">baby loss ($1K)</button>
-                <button class="button" onclick="processWreckage(5000)">medium rekt ($5K)</button>
-                <button class="button" onclick="processWreckage(10000)">absolutely cooked ($10K)</button>
+                <button class="button" onclick="processWreckage(1000)">paper hands ($1K)</button>
+                <button class="button" onclick="processWreckage(5000)">actual degen ($5K)</button>
+                <button class="button" onclick="processWreckage(10000)">ngmi whale ($10K)</button>
                 <button class="button" onclick="deployContract()">Deploy Contract (why not)</button>
                 <button class="button" onclick="clearTerminal()">hide evidence</button>
             </div>
 
             <div class="terminal" id="terminal">
                 <div class="terminal-line">USD_FRY Protocol v1.0 - Initialized (somehow)</div>
-                <div class="terminal-line">Connected to Arbitrum Sepolia testnet (it's free don't worry)</div>
-                <div class="terminal-line">5 contracts deployed and operational (trust)</div>
-                <div class="terminal-line">Ready to process your wreckage... we've seen worse<span class="blink">_</span></div>
+                <div class="terminal-line">Connected to Arbitrum Mainnet (we're actually live lol)</div>
+                <div class="terminal-line">3 contracts deployed and operational (trust me bro)</div>
+                <div class="terminal-line">Ready to process your wreckage... Binance thanks you for your donation<span class="blink">_</span></div>
             </div>
 
             <div class="progress-bar">
@@ -563,10 +563,10 @@
             button.classList.add('active');
             
             const messages = {
-                'BTC': '₿ Bitcoin wreckage detected... let me guess, longed at $69k?',
-                'SOL': '◎ Solana wreckage incoming... "but the ecosystem" you said',
-                'XRP': '✕ XRP wreckage identified... bro the SEC case is TOTALLY gonna settle',
-                'FARTCOIN': '💨 FARTCOIN wreckage found... honestly respect for even trying'
+                'BTC': '₿ Bitcoin wreckage detected... let me guess, longed at $122k?',
+                'SOL': '◎ Solana wreckage incoming... "but the ecosystem bro"',
+                'XRP': '✕ XRP wreckage identified... still waiting on that SEC case?',
+                'FARTCOIN': '💨 FARTCOIN wreckage found... at least you\'re honest'
             };
             
             addTerminalLine('');
@@ -585,8 +585,10 @@
 
             const messages = [
                 '🍟 Keep processing wreckage! (cope harder)',
-                '💎 FRY tokens are minting... (they\'re not real)',
-                '🚀 7.4x capital efficiency! (trust me bro)',
+                '💎 FRY tokens are minting... (they\'re actually on mainnet)',
+                '🚀 2.26x efficiency! (have you tried not being poor?)',
+                '💀 At least you\'re honest about your losses',
+                '🎰 Days since last liquidation: 0',
                 '⚡ Liquidity rails active! (whatever that means)',
                 '🎯 Agent B is watching... (who is Agent B)',
                 '🔥 Wreckage = Opportunity (copium)',
@@ -641,11 +643,13 @@
             if (selectedCoin === 'FARTCOIN') {
                 addTerminalLine('> lmao you actually picked FARTCOIN 💀', 900);
             } else if (amount > 50000) {
-                addTerminalLine('> bro... are you okay?', 900);
+                addTerminalLine('> bro... are you okay? like genuinely', 900);
             } else if (amount < 100) {
-                addTerminalLine('> aww that\'s cute', 900);
+                addTerminalLine('> aww that\'s cute (poverty)', 900);
+            } else if (amount === 69420) {
+                addTerminalLine('> nice', 900);
             } else {
-                addTerminalLine('> Calculating optimal path...', 900);
+                addTerminalLine('> processing copium...', 900);
             }
             
             const fryAmount = Math.round(amount * 2.26);
@@ -655,10 +659,10 @@
                 totalWreckage += amount;
                 updateMetrics();
                 
-                addTerminalLine('✓ Minted ' + fryAmount.toLocaleString() + ' FRY tokens');
-                addTerminalLine('✓ Transaction confirmed on Arbitrum Mainnet');
+                addTerminalLine('✓ Minted ' + fryAmount.toLocaleString() + ' FRY tokens (congrats?)');
+                addTerminalLine('✓ Transaction confirmed on Arbitrum Mainnet (it\'s real)');
                 addTerminalLine('✓ Contract: 0xf97E890aDf8968256225060e8744a797954C33CF');
-                addTerminalLine('> System ready (for more losses)<span class="blink">_</span>');
+                addTerminalLine('> Ready for your next L<span class="blink">_</span>');
                 
                 animateProgress(Math.min((totalWreckage / 50000) * 100, 100));
             }, 1200);
