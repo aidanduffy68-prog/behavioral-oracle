@@ -29,3 +29,9 @@ Thumbs.db
 
 # Deployment
 deployment.json
+
+# Twitter/Social Media Scripts (sensitive)
+delete_old_tweets.py
+DELETE_TWEETS_MANUAL.md
+TWITTER_API_SETUP.md
+twitter-thread.md
