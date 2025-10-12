@@ -484,6 +484,26 @@
                     <div class="metric-label">Contracts Active</div>
                 </div>
             </div>
+            
+            <!-- Subtle Stats Section -->
+            <div style="margin-top: 20px; padding: 15px; background: rgba(0, 0, 0, 0.05); border-radius: 8px; font-size: 12px; color: #666;">
+                <div style="margin-bottom: 8px; font-weight: 500;">📊 Anonymous Stats</div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                    <span>Total processed (all users):</span>
+                    <span id="global-wreckage">$19.2B</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                    <span>Participants:</span>
+                    <span id="global-users">1,642,891</span>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <span>Your session:</span>
+                    <span id="session-wreckage">$0</span>
+                </div>
+                <div style="margin-top: 10px; font-size: 11px; font-style: italic; opacity: 0.7;">
+                    All data stays local. No tracking. No accounts.
+                </div>
+            </div>
         </div>
     </div>
 
@@ -492,6 +512,22 @@
         let totalWreckage = 0;
         let contractCount = 5;
         let selectedCoin = 'BTC';
+        
+        // Load session data from localStorage
+        let sessionData = JSON.parse(localStorage.getItem('fry_session') || '{"wreckage": 0, "fry": 0, "losses": []}');
+        totalFry = sessionData.fry || 0;
+        totalWreckage = sessionData.wreckage || 0;
+        
+        function saveSession() {
+            sessionData.wreckage = totalWreckage;
+            sessionData.fry = totalFry;
+            localStorage.setItem('fry_session', JSON.stringify(sessionData));
+            updateSessionStats();
+        }
+        
+        function updateSessionStats() {
+            document.getElementById('session-wreckage').textContent = '$' + totalWreckage.toLocaleString();
+        }
 
         function addTerminalLine(text, delay = 0) {
             setTimeout(() => {
@@ -657,11 +693,27 @@
             setTimeout(() => {
                 totalFry += fryAmount;
                 totalWreckage += amount;
+                
+                // Save to session
+                sessionData.losses.push({
+                    amount: amount,
+                    coin: selectedCoin,
+                    fry: fryAmount,
+                    timestamp: Date.now()
+                });
+                saveSession();
                 updateMetrics();
                 
                 addTerminalLine('✓ Minted ' + fryAmount.toLocaleString() + ' FRY tokens (congrats?)');
                 addTerminalLine('✓ Transaction confirmed on Arbitrum Mainnet (it\'s real)');
                 addTerminalLine('✓ Contract: 0xf97E890aDf8968256225060e8744a797954C33CF');
+                
+                // Subtle acknowledgment
+                if (totalWreckage > 0) {
+                    const percentile = Math.min(Math.floor((totalWreckage / 19200000000) * 100), 99);
+                    addTerminalLine('> You\'ve processed more than ' + percentile + '% of Oct 10 participants');
+                }
+                
                 addTerminalLine('> Ready for your next L<span class="blink">_</span>');
                 
                 animateProgress(Math.min((totalWreckage / 50000) * 100, 100));
@@ -706,6 +758,10 @@
             addTerminalLine('ℹ️  ' + details[type]);
         }
 
+        // Initialize session stats on load
+        updateSessionStats();
+        updateMetrics();
+        
         // Easter egg: Konami code
         let konamiCode = [];
         const konamiPattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
