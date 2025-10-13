@@ -30,8 +30,23 @@ Thumbs.db
 # Deployment
 deployment.json
 
-# Twitter/Social Media Scripts (sensitive)
+# Twitter/social media related files (private)
 delete_old_tweets.py
 DELETE_TWEETS_MANUAL.md
 TWITTER_API_SETUP.md
-twitter-thread.md
+docs/twitter-thread.md
+
+# API keys and sensitive data
+twitter_credentials.json
+api_keys.txt
+
+# Personal notes and drafts
+notes/
+drafts/
+
+# Working docs (keep local)
+docs/dune-dashboard-spec.md
+docs/linkedin-executive-summary.md
+docs/thread-visuals-spec.md
+docs/data-visualizations.md
+create_charts.py
