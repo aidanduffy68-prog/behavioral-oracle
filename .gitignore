@@ -49,4 +49,9 @@ docs/dune-dashboard-spec.md
 docs/linkedin-executive-summary.md
 docs/thread-visuals-spec.md
 docs/data-visualizations.md
+
+# Chart generation scripts (internal use)
 create_charts.py
+create_*.py
+*_scraper.py
+hyperliquid_data_scraper*.py
