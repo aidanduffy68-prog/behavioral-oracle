@@ -1,6 +1,6 @@
 # 🍟 Greenhouse & Company
 
-**Retention Infrastructure for Crypto Exchanges**
+**Automated Market Maker for Trader Retention**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![FRY Protocol](https://img.shields.io/badge/FRY-Live%20on%20Arbitrum-green.svg)](https://arbiscan.io/address/0x492397d5912C016F49768fBc942d894687c5fe33)
@@ -12,9 +12,11 @@
 
 ## Core Thesis
 
-**Every exchange is fighting over the same 18% of traders who stay after liquidation.**
+**Trader retention is a liquidity problem.**
 
-**We're building infrastructure to capture the 82% who quit.**
+Exchanges continuously balance retention incentives (FRY tokens) and trader attention (activity, deposits, volume) to keep users engaged after liquidations. We're building an AMM to automate this at scale.
+
+**Instead of tokens ↔ tokens, we trade: Retention signals ↔ Trader attention**
 
 ---
 
@@ -104,17 +106,22 @@ We analyze DeFi infrastructure across three layers:
 ## Project Structure
 
 ```
-liquidity-rails/
+fry-liquidity-rails-clean/
 ├── core/
+│   ├── oracle/         # FRY Retention Oracle (30-day tracking, LTV measurement)
+│   ├── amm/            # Retention AMM (bonding curves, LP pools)
 │   ├── engines/        # Routing, matching, ML, visualization
-│   ├── privacy/        # zkML & confidential positions
-│   ├── federated/      # Distributed learning
-│   ├── api/            # REST API server
-│   ├── contracts/      # Smart contracts
-│   └── tests/          # Test suite
-├── docs/               # Documentation
-├── scripts/            # Deployment scripts
-└── examples/           # Usage examples
+│   ├── contracts/      # Smart contracts (FRY token, prediction markets)
+│   └── api/            # REST API server
+├── docs/
+│   ├── research/       # FRY AMM spec, API guides, Dune queries
+│   ├── deployment/     # Deployment guides
+│   └── guides/         # User guides
+├── data/
+│   └── retention/      # Oracle database (SQLite)
+├── marketing/
+│   └── charts/         # Visualizations for research articles
+└── liquidity-rails/    # Legacy routing infrastructure
 ```
 
 ---
@@ -209,9 +216,15 @@ Trading Loss → Chainlink Price Verification → FRY Minting (2.26x) → Tradea
 - [Counterfactual Analysis](docs/lighter-variational-fry-analysis.md) - How Lighter + Variational + FRY prevent October 10
 
 **In Progress:**
-- Oracle Manipulation Detection (Part 2)
-- Exchange Architecture Analysis
-- Retention Economics Deep Dive
+- Part 2: Exchange Architecture & Oracle Vulnerability Analysis
+- FRY Retention Oracle (measuring 30-day return rates, LTV)
+- FRY Retention AMM specification (bonding curves, LP mechanics)
+- Part 3: Retention AMM Deep Dive (coming soon)
+
+**Infrastructure:**
+- [FRY Retention Oracle](core/oracle/fry_retention_oracle.py) - Tracks liquidated traders, measures retention
+- [FRY AMM Spec](docs/research/fry-retention-amm-spec.md) - Complete AMM design for retention
+- [Dune Queries](docs/research/dune-query-liquidated-wallets.sql) - October 10 data collection
 
 ---
 
