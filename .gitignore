@@ -55,3 +55,6 @@ create_charts.py
 create_*.py
 *_scraper.py
 hyperliquid_data_scraper*.py
+
+# Marketing materials (keep local)
+marketing/
