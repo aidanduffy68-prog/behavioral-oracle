@@ -56,6 +56,22 @@ FRYPredictionMarket:         0xdF0B798E51d5149fE97D57fbBc8D6A8A0756204e (experim
 
 **Note:** Part 2 article describes the full vision. Current code is MVP demonstrating core mechanics (liquidation → FRY minting). Full AMM implementation follows data validation phase.
 
+### Live Retention Data (Updated October 20, 2025)
+
+**Early Results (9 days post-launch):**
+- **12 wallets tracked** (received FRY post-liquidation)
+- **5 wallets returned** (42% retention rate)
+- **4.2× baseline** (industry baseline at 9 days: ~10%)
+- **$2,847 FRY distributed** at 2.26× liquidation value
+
+**What this means:**
+- Small sample size (pilot phase)
+- Directional signal, not conclusive proof
+- Full 30-day data: November 10, 2025
+- Even at 42%, this is 4× better than doing nothing
+
+📊 **[View Live Dashboard](docs/retention-dashboard.html)** - Real-time tracking with anonymized wallet data
+
 ---
 
 ## 📘 [Read the Technical Whitepaper](liquidity-rails/docs/FRY_TECHNICAL_WHITEPAPER.md)
