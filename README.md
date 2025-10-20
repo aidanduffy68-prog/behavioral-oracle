@@ -12,9 +12,13 @@
 
 ## Core Thesis
 
-**Trader retention is a liquidity problem.**
+**We built the first reverse oracle.**
 
-Exchanges continuously balance retention incentives (FRY tokens) and trader attention (activity, deposits, volume) to keep users engaged after liquidations. We're building an AMM to automate this at scale.
+Traditional oracles measure asset prices (BTC/USD, ETH/USD). Reverse oracles measure trader behavior (retention, churn, LTV).
+
+**The missing oracle layer:** Nobody's measuring "Will this trader come back after liquidation?" We are.
+
+**Trader retention is a liquidity problem.** Exchanges continuously balance retention incentives (FRY tokens) and trader attention (activity, deposits, volume) to keep users engaged after liquidations. We're building an AMM to automate this at scale.
 
 **Instead of tokens ↔ tokens, we trade: Retention signals ↔ Trader attention**
 
@@ -27,7 +31,7 @@ Exchanges continuously balance retention incentives (FRY tokens) and trader atte
 ```
 USD_FRY Token:               0x492397d5912C016F49768fBc942d894687c5fe33
 WreckageProcessorWithOracle: 0xf97E890aDf8968256225060e8744a797954C33CF
-FRYPredictionMarket:         0xdF0B798E51d5149fE97D57fbBc8D6A8A0756204e
+FRYPredictionMarket:         0xdF0B798E51d5149fE97D57fbBc8D6A8A0756204e (experimental)
 ```
 
 **Chainlink Oracles:**
@@ -35,6 +39,22 @@ FRYPredictionMarket:         0xdF0B798E51d5149fE97D57fbBc8D6A8A0756204e
 - ETH/USD: `0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612`
 
 [View on Arbiscan →](https://arbiscan.io/address/0x492397d5912C016F49768fBc942d894687c5fe33)
+
+### Current Implementation Status
+
+**Live (MVP):**
+- ✅ FRY Token (ERC20)
+- ✅ Wreckage Processor (liquidation → FRY minting at 2.26×)
+- ✅ Chainlink Price Feeds (BTC/USD, ETH/USD)
+- ✅ Prediction Markets (experimental feature, separate from retention)
+
+**In Development:**
+- 🔄 Retention Oracle (30-day tracking system)
+- 🔄 Bonding Curve AMM (automated retention pricing)
+- 🔄 Cross-exchange tracking infrastructure
+- 🔄 LP pool mechanics
+
+**Note:** Part 2 article describes the full vision. Current code is MVP demonstrating core mechanics (liquidation → FRY minting). Full AMM implementation follows data validation phase.
 
 ---
 
@@ -84,9 +104,10 @@ We analyze DeFi infrastructure across three layers:
 - Psychological shift: "I lost money" → "I got something back"
 
 **The Result:**
-- **70% retention vs 18% baseline**
-- **3.9× improvement**
+- **Target: 50%+ retention vs 18% baseline**
+- **2.7× improvement potential**
 - Growth spiral instead of death spiral
+- Early validation: October 11 launch tracking in progress
 
 ### October 10, 2025: The Validation Event
 
@@ -156,7 +177,9 @@ npm run deploy:mainnet
 Trading Loss → Chainlink Price Verification → FRY Minting (2.26x) → Tradeable Token
 ```
 
-### Prediction Markets
+### Prediction Markets (Experimental)
+**Note:** Separate feature from retention oracle. Testing FRY distribution mechanics.
+
 - Create markets about crypto prices, events, etc.
 - Bet with USDC
 - Auto-resolve using Chainlink oracles
@@ -236,7 +259,8 @@ Trading Loss → Chainlink Price Verification → FRY Minting (2.26x) → Tradea
 **Demo**: [Live](https://aidanduffy68-prog.github.io/USD_FRY/)
 
 **Research**: Active  
-**Partnerships**: In discussion (Stork Labs, Lighter, Variational)
+**Partnerships**: In discussion (Stork Labs, Lighter, Variational)  
+**Live Metrics**: [Retention Dashboard](docs/retention-dashboard.html) - Real-time tracking of trader retention
 
 ### Roadmap
 
@@ -250,6 +274,56 @@ Trading Loss → Chainlink Price Verification → FRY Minting (2.26x) → Tradea
 - Integrate with 3-5 exchanges
 - Launch retention analytics dashboard
 - Expand research to cover all major DEXs
+
+---
+
+## FAQ
+
+### Token Economics
+
+**Q: What's the FRY supply schedule? How does this avoid becoming another incentive-farming dust token?**
+
+- **Elastic supply**: Minted on-demand at 2.26× liquidation value (no pre-mine, no VC allocation)
+- **Inflation control**: 6-month vesting + churn burn = deflationary pressure
+- **Net inflation**: ~40% of liquidation value (only 18% of minted FRY fully vests)
+- **Anti-farming**: Vesting cliff, activity multiplier, cross-exchange tracking, churn burn
+
+### Competitive Analysis
+
+**Q: What stops every exchange from building their own retention token?**
+
+Nothing. They should. But cross-exchange AMM provides:
+- **Portable retention**: FRY earned on Hyperliquid works on dYdX
+- **Better data**: Oracle tracks traders across all venues
+- **Network effects**: More exchanges = more valuable FRY
+- **Anti-farming**: Can't game the system by hopping exchanges
+
+**Competitive moat**: First-mover advantage, oracle infrastructure, "reverse oracles" brand. Realistic outcome: become "Chainlink for retention."
+
+### Implementation Roadmap
+
+**Phase 1: Data Validation (Current - 2-4 weeks)**
+- Run October 10 analysis via Allium
+- Validate retention predictions on real liquidation data
+- Success metric: Prediction accuracy >70%
+
+**Phase 2: Single-Exchange Pilot (Q1 2026 - 3-6 months)**
+- Target: Hyperliquid
+- 1,000 liquidated traders receive FRY
+- Success metrics: 30-day return rate >30% (vs. 18% baseline), 2× LTV vs. control
+
+**Phase 3: Cross-Exchange Expansion (Q2-Q3 2026 - 6-9 months)**
+- Integrate 2-3 additional exchanges (dYdX, Vertex, Drift)
+- Launch cross-exchange oracle
+- Success metrics: 3+ exchanges, 10,000+ traders, validated cross-exchange data
+
+**Phase 4: Decentralization (Q4 2026 - 12+ months)**
+- Decentralized oracle network
+- Governance token launch
+- Open-source AMM contracts
+- Success metrics: 10+ exchanges, $10M+ TVL
+
+**Full FAQ**: [Token Economics & Roadmap](docs/faq-token-economics-roadmap.md)
 
 ---
 

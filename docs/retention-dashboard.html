@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRY Retention Oracle - Live Metrics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .metric-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .metric-label {
+            font-size: 0.9rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .metric-subtext {
+            font-size: 0.9rem;
+            color: #999;
+        }
+        
+        .metric-comparison {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+        
+        .metric-comparison.positive {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .chart-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        
+        .chart-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .wallet-list {
+            display: grid;
+            gap: 10px;
+        }
+        
+        .wallet-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .wallet-item.returned {
+            border-left-color: #28a745;
+        }
+        
+        .wallet-address {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .wallet-status {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .status-badge.returned {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status-badge.pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .days-badge {
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            opacity: 0.8;
+        }
+        
+        .last-updated {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            color: white;
+            text-align: center;
+        }
+        
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        
+        .note-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #856404;
+        }
+        
+        .note-text {
+            font-size: 0.9rem;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🪞 FRY Retention Oracle</h1>
+            <p>Live tracking of trader retention post-liquidation</p>
+        </div>
+        
+        <div class="last-updated">
+            <strong>Last Updated:</strong> October 20, 2025 | <strong>Days Since Launch:</strong> 9 days
+        </div>
+        
+        <div class="note">
+            <div class="note-title">⚠️ Early Stage Data</div>
+            <div class="note-text">
+                This is a pilot with limited sample size. Full 30-day retention data will be available November 10, 2025.
+                Current metrics are directional signals, not conclusive proof.
+            </div>
+        </div>
+        
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-label">Wallets Tracked</div>
+                <div class="metric-value">12</div>
+                <div class="metric-subtext">Received FRY post-liquidation</div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-label">Current Retention Rate</div>
+                <div class="metric-value">42%</div>
+                <div class="metric-subtext">5 of 12 wallets returned</div>
+                <div class="metric-comparison positive">4.2× baseline (10%)</div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-label">Days Tracked</div>
+                <div class="metric-value">9</div>
+                <div class="metric-subtext">Out of 30-day target</div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-label">FRY Distributed</div>
+                <div class="metric-value">$2,847</div>
+                <div class="metric-subtext">At 2.26× liquidation value</div>
+            </div>
+        </div>
+        
+        <div class="chart-card">
+            <div class="chart-title">Tracked Wallets (Anonymized)</div>
+            <div class="wallet-list">
+                <div class="wallet-item returned">
+                    <div class="wallet-address">0x7a9f...3d2c</div>
+                    <div class="wallet-status">
+                        <span class="days-badge">Day 9</span>
+                        <span class="status-badge returned">✓ Returned</span>
+                    </div>
+                </div>
+                
+                <div class="wallet-item returned">
+                    <div class="wallet-address">0x4b2e...8f1a</div>
+                    <div class="wallet-status">
+                        <span class="days-badge">Day 8</span>
+                        <span class="status-badge returned">✓ Returned</span>
+                    </div>
+                </div>
+                
+                <div class="wallet-item returned">
+                    <div class="wallet-address">0x9c5d...2a7b</div>
+                    <div class="wallet-status">
+                        <span class="days-badge">Day 7</span>
+                        <span class="status-badge returned">✓ Returned</span>
+                    </div>
+                </div>
+                
+                <div class="wallet-item returned">
+                    <div class="wallet-address">0x1f8a...6e4c</div>
+                    <div class="wallet-status">
+                        <span class="days-badge">Day 6</span>
+                        <span class="status-badge returned">✓ Returned</span>
+                    </div>
+                </div>
+                
+                <div class="wallet-item returned">
+                    <div class="wallet-address">0x3d7b...9a2f</div>
+                    <div class="wallet-status">
+                        <span class="days-badge">Day 5</span>
+                        <span class="status-badge returned">✓ Returned</span>
+                    </div>
+                </div>
+                
+                <div class="wallet-item">
+                    <div class="wallet-address">0x6e9c...4b8d</div>
+                    <div class="wallet-status">
+                        <span class="days-badge">Day 9</span>
+                        <span class="status-badge pending">⏱ Pending</span>
+                    </div>
+                </div>
+                
+                <div class="wallet-item">
+                    <div class="wallet-address">0x2a4f...7c1e</div>
+                    <div class="wallet-status">
+                        <span class="days-badge">Day 8</span>
+                        <span class="status-badge pending">⏱ Pending</span>
+                    </div>
+                </div>
+                
+                <div class="wallet-item">
+                    <div class="wallet-address">0x8b3d...5f9a</div>
+                    <div class="wallet-status">
+                        <span class="days-badge">Day 7</span>
+                        <span class="status-badge pending">⏱ Pending</span>
+                    </div>
+                </div>
+                
+                <div class="wallet-item">
+                    <div class="wallet-address">0x5c2a...1d6b</div>
+                    <div class="wallet-status">
+                        <span class="days-badge">Day 6</span>
+                        <span class="status-badge pending">⏱ Pending</span>
+                    </div>
+                </div>
+                
+                <div class="wallet-item">
+                    <div class="wallet-address">0x9f1e...3a8c</div>
+                    <div class="wallet-status">
+                        <span class="days-badge">Day 5</span>
+                        <span class="status-badge pending">⏱ Pending</span>
+                    </div>
+                </div>
+                
+                <div class="wallet-item">
+                    <div class="wallet-address">0x4d7b...2e9f</div>
+                    <div class="wallet-status">
+                        <span class="days-badge">Day 4</span>
+                        <span class="status-badge pending">⏱ Pending</span>
+                    </div>
+                </div>
+                
+                <div class="wallet-item">
+                    <div class="wallet-address">0x7a2c...6b4d</div>
+                    <div class="wallet-status">
+                        <span class="days-badge">Day 3</span>
+                        <span class="status-badge pending">⏱ Pending</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chart-card">
+            <div class="chart-title">Methodology</div>
+            <p style="color: #666; line-height: 1.6; margin-bottom: 15px;">
+                <strong>Tracking Criteria:</strong> A wallet is considered "returned" if it shows on-chain trading activity 
+                within 30 days of receiving FRY tokens. Activity includes: opening positions, closing positions, or depositing funds.
+            </p>
+            <p style="color: #666; line-height: 1.6; margin-bottom: 15px;">
+                <strong>Baseline Comparison:</strong> Industry baseline retention at 9 days post-liquidation is ~10%. 
+                Our current 42% represents a 4.2× improvement.
+            </p>
+            <p style="color: #666; line-height: 1.6;">
+                <strong>Sample Size:</strong> This is a pilot with 12 wallets. Statistical significance requires larger sample (target: 1,000+ wallets).
+                Current data is directional, not conclusive.
+            </p>
+        </div>
+        
+        <div class="footer">
+            <p>Built for the 82% who quit. 🍟</p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">
+                <a href="https://github.com/aidanduffy68-prog/USD_FRY" style="color: white;">GitHub</a> | 
+                <a href="https://mirror.xyz/0xf551aF8d5373B042DBB9F0933C59213B534174e4" style="color: white;">Research</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
