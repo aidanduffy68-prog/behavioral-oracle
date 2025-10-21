@@ -2,11 +2,24 @@
 
 **Automated Market Maker for Trader Retention**
 
+**Last Updated: October 20, 2025**
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![FRY Protocol](https://img.shields.io/badge/FRY-Live%20on%20Arbitrum-green.svg)](https://arbiscan.io/address/0x492397d5912C016F49768fBc942d894687c5fe33)
 [![Research](https://img.shields.io/badge/Research-Mirror-blue.svg)](https://mirror.xyz/0xf551aF8d5373B042DBB9F0933C59213B534174e4)
 
 🌐 **[FRY Demo](https://aidanduffy68-prog.github.io/USD_FRY/)** | 📊 **[Contracts](https://arbiscan.io/address/0x492397d5912C016F49768fBc942d894687c5fe33)** | 📝 **[Research](https://mirror.xyz/0xf551aF8d5373B042DBB9F0933C59213B534174e4)**
+
+---
+
+## 📢 Recent Updates
+
+**October 20, 2025**
+- Published AI Reverse Oracles research article
+- Launched live retention dashboard with 9 days of data (42% retention, 4.2× baseline)
+- Added protocol lifetime stats and live timestamp to dashboard
+- Control group tracking coming October 23
+- Expanded outreach to oracle protocols and DeFi companies
 
 ---
 
