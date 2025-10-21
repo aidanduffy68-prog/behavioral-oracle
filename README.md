@@ -2,7 +2,7 @@
 
 **Automated Market Maker for Trader Retention**
 
-**Last Updated: October 20, 2025**
+**Last Updated: October 21, 2025**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![FRY Protocol](https://img.shields.io/badge/FRY-Live%20on%20Arbitrum-green.svg)](https://arbiscan.io/address/0x492397d5912C016F49768fBc942d894687c5fe33)
@@ -14,11 +14,11 @@
 
 ## 📢 Recent Updates
 
-**October 20, 2025**
+**October 21, 2025**
+- **NEW:** Behavioral Liquidity Mining engine - Extract trading alpha from trader psychology patterns
+- Launched control group tracking (10 wallets) - Dashboard now shows 42% vs 0% proven impact
 - Published AI Reverse Oracles research article
-- Launched live retention dashboard with 9 days of data (42% retention, 4.2× baseline)
-- Added protocol lifetime stats and live timestamp to dashboard
-- Control group tracking coming October 23
+- Live retention dashboard with 10 days of data (42% retention, ∞× vs control group)
 - Expanded outreach to oracle protocols and DeFi companies
 
 ---
@@ -34,6 +34,22 @@ Traditional oracles measure asset prices (BTC/USD, ETH/USD). Reverse oracles mea
 **Trader retention is a liquidity problem.** Exchanges continuously balance retention incentives (FRY tokens) and trader attention (activity, deposits, volume) to keep users engaged after liquidations. We're building an AMM to automate this at scale.
 
 **Instead of tokens ↔ tokens, we trade: Retention signals ↔ Trader attention**
+
+### Behavioral Liquidity Mining
+
+**New capability:** We don't just track retention—we extract trading alpha from trader psychology patterns.
+
+Liquidation events create behavioral "fingerprints" that predict future trading behavior:
+- **Alpha Traders**: High recovery speed + high risk tolerance + trading consistency
+- **Retention Candidates**: Platform loyalty + conservative shift post-liquidation
+- **Arbitrageurs**: Cross-platform activity + low loyalty + high consistency
+- **Sentiment Leaders**: Social influence + recovery speed + sentiment impact
+
+**Same infrastructure serves dual purposes:**
+1. **Retention Oracle** → Measure who returns
+2. **Behavioral Liquidity Mining** → Predict who generates alpha, who stays loyal, who arbitrages
+
+📊 **[Behavioral Liquidity Miner](core/oracle/behavioral_liquidity_miner.py)** - Extract trading signals from trader psychology
 
 ---
 
