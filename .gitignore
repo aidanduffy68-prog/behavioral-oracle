@@ -68,6 +68,8 @@ docs/*-humorous.md
 docs/*-personal.md
 
 # Visual creation scripts (keep local)
+scripts/visual_creation/
+scripts/demos/
 scripts/create_oracle_*.py
 scripts/create_fry_*.py
 scripts/create_mm_*.py
