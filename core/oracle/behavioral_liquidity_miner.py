@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
 Behavioral Liquidity Mining Engine
 ==================================
@@ -15,6 +16,7 @@ Core Innovation:
 Research Direction: "Behavioral Liquidity Mining"
 """
 
+from __future__ import annotations
 import numpy as np
 import pandas as pd
 import sqlite3
