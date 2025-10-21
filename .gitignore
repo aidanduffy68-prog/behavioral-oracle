@@ -66,3 +66,13 @@ docs/x-thread-*.md
 docs/*-visual*.md
 docs/*-humorous.md
 docs/*-personal.md
+
+# Visual creation scripts (keep local)
+scripts/create_oracle_*.py
+scripts/create_fry_*.py
+scripts/create_mm_*.py
+scripts/create_adl_*.py
+scripts/create_oct10_*.py
+scripts/create_charts.py
+core/oracle/reverse_oracle_*.py
+marketing/charts/*.py
