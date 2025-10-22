@@ -15,7 +15,7 @@
 ## 📢 Recent Updates
 
 **October 21, 2025**
-- **🏛️ NEW:** Narcissus & Echo Behavioral Mining 10/10 - The complete mythological system
+- **🏛️ NEW:** Narcissus & Echo Behavioral Mining - The complete mythological system
 - **NEW:** Behavioral Liquidity Mining engine - Extract trading alpha from trader psychology patterns
 - Launched control group tracking (10 wallets) - Dashboard now shows 42% vs 0% proven impact
 - Published AI Reverse Oracles research article
@@ -36,7 +36,7 @@ Traditional oracles measure asset prices (BTC/USD, ETH/USD). Reverse oracles mea
 
 **Instead of tokens ↔ tokens, we trade: Retention signals ↔ Trader attention**
 
-### 🏛️ Narcissus & Echo: Behavioral Liquidity Mining 10/10
+### 🏛️ Narcissus & Echo: Behavioral Liquidity Mining
 
 **The Complete Mythological System:** We don't just track retention—we extract trading alpha from trader psychology patterns using a three-layer mythological framework.
 
@@ -62,7 +62,7 @@ Traditional oracles measure asset prices (BTC/USD, ETH/USD). Reverse oracles mea
 1. **Retention Oracle** → Measure who returns
 2. **Behavioral Liquidity Mining** → Predict who generates alpha, who stays loyal, who arbitrages
 
-📊 **[Narcissus & Echo System](narcissus_echo_behavioral_mining.py)** - The complete mythological behavioral intelligence platform
+📊 **[Narcissus & Echo System](behavioral_liquidity_mining/narcissus_echo/narcissus_echo_behavioral_mining.py)** - The complete mythological behavioral intelligence platform
 
 ---
 
