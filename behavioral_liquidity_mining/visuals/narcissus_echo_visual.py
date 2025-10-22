@@ -33,7 +33,7 @@ def create_narcissus_echo_visual():
     ax.add_patch(title_bar)
     
     # Title text
-    ax.text(8, 11.6, '🏛️ Narcissus & Echo: Behavioral Liquidity Mining 10/10', 
+    ax.text(8, 11.6, '🏛️ Narcissus & Echo: Behavioral Liquidity Mining', 
             ha='center', va='center', fontsize=16, fontweight='bold', color='black')
     
     # Close button (Windows 95 style)
