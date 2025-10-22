@@ -195,12 +195,12 @@ def create_cross_chain_intelligence(ax):
 def create_simple_metrics(ax):
     """Create simplified metrics display at bottom"""
     
-    # Key metrics in a single clean panel
+    # Key metrics showing validation results
     metrics = [
         "13,659 Liquidations Analyzed",
-        "1.99 Alpha per Event",
         "100% Cross-Chain Correlation",
-        "5 Behavioral Patterns Detected"
+        "5 Behavioral Patterns Detected",
+        "42% Retention vs 0% Control"
     ]
     
     # Display metrics horizontally at bottom
