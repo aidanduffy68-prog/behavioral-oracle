@@ -113,7 +113,7 @@ FRYPredictionMarket:         0xdF0B798E51d5149fE97D57fbBc8D6A8A0756204e (experim
 - Full 30-day data: November 10, 2025
 - Even at 42%, this is 4× better than doing nothing
 
-📊 **[View Live Dashboard](docs/retention-dashboard.html)** - Real-time tracking with anonymized wallet data
+📊 **[View Live Dashboard](https://aidanduffy68-prog.github.io/USD_FRY/docs/retention-dashboard.html)** - Real-time tracking with anonymized wallet data
 
 ---
 
@@ -319,7 +319,7 @@ Trading Loss → Chainlink Price Verification → FRY Minting (2.26x) → Tradea
 
 **Research**: Active  
 **Partnerships**: In discussion (Stork Labs, Lighter, Variational)  
-**Live Metrics**: [Retention Dashboard](docs/retention-dashboard.html) - Real-time tracking of trader retention
+**Live Metrics**: [Retention Dashboard](https://aidanduffy68-prog.github.io/USD_FRY/docs/retention-dashboard.html) - Real-time tracking of trader retention
 
 ### Roadmap
 
