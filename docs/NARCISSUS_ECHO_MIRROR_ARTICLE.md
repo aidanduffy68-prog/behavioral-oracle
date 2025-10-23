@@ -114,34 +114,27 @@ echo_potential = (position_size_factor × 0.6) + (leverage_factor × 0.4)
 
 ## The Cross-Chain Detector: Universal Behavioral Patterns
 
-Here's where it gets interesting.
+The framework is designed to detect behavioral patterns across multiple blockchain networks.
 
-We validated the system with **13,659 historical liquidations** across 5 exchanges (Hyperliquid, dYdX, Vertex, Drift, GMX) and 5 blockchain networks (Ethereum, Solana, Arbitrum, Polygon, Base).
+**The Hypothesis:**
+Trader psychology is universal across chains. A trader who uses 20x leverage on Ethereum will likely use similar leverage on Solana or Arbitrum.
 
-**Result: 100% cross-chain correlation.**
-
-This is unprecedented in behavioral finance.
-
-What it means: **Trader psychology is universal across chains.**
-
-Solana traders are more risk-tolerant than Ethereum traders (1.2x multiplier). But the underlying behavioral patterns—leverage addiction, blue chip gambling, liquidation cycles—are the same.
-
-The Cross-Chain Detector reveals:
+**What the Cross-Chain Detector would reveal:**
 
 **1. Universal Patterns**
 - Patterns appearing across multiple chains
-- "Leverage addiction" appears on all 5 chains
-- Universality score: 1.0 (100% cross-chain)
+- "Leverage addiction" could appear consistently across networks
+- Framework designed to calculate universality scores
 
 **2. Cross-Chain Correlations**
 - Behavioral correlation between chains
-- Ethereum ↔ Arbitrum: 0.92 correlation
-- Solana ↔ Polygon: 0.78 correlation
+- Example: Ethereum ↔ Arbitrum behavioral similarity
+- Requires multi-chain data to validate
 
 **3. Echo Transmission Paths**
 - How patterns spread from chain to chain
-- Pattern originates on Ethereum → spreads to Arbitrum → jumps to Solana
-- Transmission speed: 2.3 chains per day
+- Pattern originates on one chain → spreads to others
+- Needs real cross-chain wallet tracking to prove
 
 ---
 
