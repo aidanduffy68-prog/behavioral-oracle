@@ -198,8 +198,8 @@ Same infrastructure serves dual purposes:
 - Optimize retention incentives by trader archetype
 
 **2. Alpha Extraction**
-- Extract trading alpha from behavioral patterns
-- 1.99 alpha per liquidation (validated)
+- Extract trading signals from behavioral patterns
+- Identify high-value trader archetypes
 - Predict future behavior with confidence scores
 
 One dataset. Two revenue streams.
