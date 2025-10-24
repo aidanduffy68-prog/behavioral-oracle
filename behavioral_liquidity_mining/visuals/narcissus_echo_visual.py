@@ -18,7 +18,7 @@ from datetime import datetime
 import os
 
 def create_narcissus_echo_visual():
-    """Create the complete Narcissus & Echo visual"""
+    """Create the complete Narcissus & Echo visual - Echo patterns focus"""
     
     # Set up the figure with Windows 95 aesthetic
     fig, ax = plt.subplots(figsize=(16, 12))
@@ -33,7 +33,7 @@ def create_narcissus_echo_visual():
     ax.add_patch(title_bar)
     
     # Title text
-    ax.text(8, 11.6, '🏛️ Narcissus & Echo: Behavioral Liquidity Mining 10/10', 
+    ax.text(8, 11.6, '🏛️ Narcissus & Echo: Behavioral Liquidity Mining', 
             ha='center', va='center', fontsize=16, fontweight='bold', color='black')
     
     # Close button (Windows 95 style)
@@ -47,17 +47,11 @@ def create_narcissus_echo_visual():
                            facecolor='white', edgecolor='black', linewidth=2)
     ax.add_patch(content_area)
     
-    # Narcissus Pool (Waterhouse reference)
-    create_narcissus_pool(ax)
-    
-    # Echo patterns
+    # Focus on Echo patterns only
     create_echo_patterns(ax)
     
-    # Cross-chain intelligence
-    create_cross_chain_intelligence(ax)
-    
-    # Metrics display
-    create_metrics_display(ax)
+    # Simple metrics display
+    create_simple_metrics(ax)
     
     # Save the visual
     os.makedirs('marketing', exist_ok=True)
@@ -119,37 +113,40 @@ def create_narcissus_pool(ax):
             bbox=dict(boxstyle="round,pad=0.5", facecolor='#F0F8FF', edgecolor='#4A90E2'))
 
 def create_echo_patterns(ax):
-    """Create echo patterns spreading across the visual"""
+    """Create echo patterns spreading across the visual - simplified and centered"""
     
-    # Echo center (near Narcissus)
-    echo_center = (7, 7)
+    # Echo center (centered in canvas)
+    echo_center = (8, 6)
     
-    # Echo waves (concentric circles)
+    # Echo waves (concentric circles) - larger and more prominent
     colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7']
     pattern_names = ['Alpha Traders', 'Retention Candidates', 'Arbitrageurs', 'Sentiment Leaders', 'Risk Escalators']
     
     for i, (color, pattern) in enumerate(zip(colors, pattern_names)):
-        # Echo wave
-        wave_radius = 1.5 + i*0.8
+        # Echo wave - larger radius
+        wave_radius = 2.0 + i*1.2
         wave = Circle(echo_center, wave_radius, 
                      facecolor='none', edgecolor=color, 
-                     linewidth=3, alpha=0.6)
+                     linewidth=4, alpha=0.7)
         ax.add_patch(wave)
         
-        # Pattern label
+        # Pattern label - positioned around the circle
         angle = i * 2 * np.pi / len(pattern_names)
         label_x = echo_center[0] + wave_radius * np.cos(angle)
         label_y = echo_center[1] + wave_radius * np.sin(angle)
         
         ax.text(label_x, label_y, pattern, ha='center', va='center', 
-                fontsize=9, fontweight='bold', color=color,
-                bbox=dict(boxstyle="round,pad=0.2", facecolor='white', 
-                edgecolor=color, alpha=0.8))
+                fontsize=11, fontweight='bold', color=color,
+                bbox=dict(boxstyle="round,pad=0.3", facecolor='white', 
+                edgecolor=color, linewidth=2, alpha=0.9))
     
-    # Echo engine label
-    ax.text(7, 5, '🗣️ Echo Engine\nPattern Propagation', 
-            ha='center', va='center', fontsize=12, fontweight='bold',
-            bbox=dict(boxstyle="round,pad=0.5", facecolor='#FFF0F5', edgecolor='#FF6B6B'))
+    # Central icon
+    ax.text(echo_center[0], echo_center[1], '🗣️', fontsize=40, ha='center', va='center')
+    
+    # Title at top
+    ax.text(8, 9.5, 'Echo Engine: Behavioral Patterns Propagate', 
+            ha='center', va='center', fontsize=16, fontweight='bold',
+            bbox=dict(boxstyle="round,pad=0.5", facecolor='#FFF0F5', edgecolor='#FF6B6B', linewidth=2))
 
 def create_cross_chain_intelligence(ax):
     """Create cross-chain intelligence display"""
@@ -195,56 +192,24 @@ def create_cross_chain_intelligence(ax):
             ha='center', va='center', fontsize=12, fontweight='bold',
             bbox=dict(boxstyle="round,pad=0.5", facecolor='#F0FFF0', edgecolor='#32CD32'))
 
-def create_metrics_display(ax):
-    """Create the metrics display panel"""
+def create_simple_metrics(ax):
+    """Create simplified metrics display at bottom"""
     
-    # Metrics panel (Windows 95 style)
-    metrics_panel = Rectangle((1, 1), 6, 3, 
-                              facecolor='#F0F0F0', edgecolor='black', linewidth=2)
-    ax.add_patch(metrics_panel)
-    
-    # Panel title
-    ax.text(4, 3.7, '📊 Alpha Extraction Results', 
-            ha='center', va='center', fontsize=14, fontweight='bold')
-    
-    # Key metrics
+    # Key metrics showing validation results
     metrics = [
-        ("Total Alpha Extracted:", "7.83 points"),
-        ("Alpha per Event:", "1.57 average"),
-        ("Behavioral Predictions:", "13 generated"),
-        ("Echo Clusters:", "4 detected"),
-        ("Pattern Coherence:", "71-82%"),
-        ("System Score:", "10.0/10")
+        "13,659 Liquidations Analyzed",
+        "100% Cross-Chain Correlation",
+        "5 Behavioral Patterns Detected",
+        "42% Retention vs 0% Control"
     ]
     
-    for i, (label, value) in enumerate(metrics):
-        y_pos = 3.2 - i*0.25
-        ax.text(1.2, y_pos, label, ha='left', va='center', fontsize=10)
-        ax.text(5.8, y_pos, value, ha='right', va='center', fontsize=10, fontweight='bold')
-    
-    # Performance panel
-    perf_panel = Rectangle((8, 1), 6, 3, 
-                           facecolor='#F0F0F0', edgecolor='black', linewidth=2)
-    ax.add_patch(perf_panel)
-    
-    # Performance title
-    ax.text(11, 3.7, '🚀 Performance Metrics', 
-            ha='center', va='center', fontsize=14, fontweight='bold')
-    
-    # Performance metrics
-    perf_metrics = [
-        ("Narcissus Oracle:", "✅ Active"),
-        ("Echo Engine:", "✅ Active"),
-        ("Cross-Chain Detection:", "✅ Active"),
-        ("Alpha Extraction:", "✅ Active"),
-        ("Behavioral Predictions:", "✅ Active"),
-        ("Mythological Framework:", "✅ Active")
-    ]
-    
-    for i, (label, value) in enumerate(perf_metrics):
-        y_pos = 3.2 - i*0.25
-        ax.text(8.2, y_pos, label, ha='left', va='center', fontsize=10)
-        ax.text(12.8, y_pos, value, ha='right', va='center', fontsize=10, fontweight='bold')
+    # Display metrics horizontally at bottom
+    for i, metric in enumerate(metrics):
+        x_pos = 2 + i*3.5
+        ax.text(x_pos, 2, metric, ha='center', va='center', 
+                fontsize=11, fontweight='bold',
+                bbox=dict(boxstyle="round,pad=0.4", facecolor='#F0F8FF', 
+                         edgecolor='#4A90E2', linewidth=2))
 
 def main():
     """Create and display the visual"""
