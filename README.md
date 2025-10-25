@@ -10,6 +10,17 @@
 
 🌐 **[FRY Demo](https://aidanduffy68-prog.github.io/USD_FRY/)** | 📊 **[Contracts](https://arbiscan.io/address/0x492397d5912C016F49768fBc942d894687c5fe33)** | 📝 **[Research](https://mirror.xyz/0xf551aF8d5373B042DBB9F0933C59213B534174e4)**
 
+## 📁 Project Structure
+
+All project files are organized in the `usd_fry_project/` directory:
+
+- **`behavioral_liquidity_mining/`** - Complete behavioral intelligence framework
+- **`core/`** - Core oracle and AMM implementations  
+- **`docs/`** - Research articles, specifications, and documentation
+- **`liquidity-rails/`** - Infrastructure layer for cross-DEX routing
+- **`data/`** - Data collection and analysis tools
+- **`marketing/`** - Visual assets and marketing materials
+
 ---
 
 ## 📢 Recent Updates
