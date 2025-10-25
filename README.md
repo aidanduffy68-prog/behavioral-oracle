@@ -41,7 +41,7 @@
 
 ## Project Structure
 
-All files in `usd_fry_project/`:
+All files in `fry_protocol/`:
 - **`behavioral_liquidity_mining/`** - Complete behavioral intelligence framework
 - **`core/`** - Oracle and AMM implementations
 - **`docs/`** - Research and documentation
