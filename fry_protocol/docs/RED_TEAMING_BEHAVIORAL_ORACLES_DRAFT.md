@@ -1,4 +1,4 @@
-# How I Spent a Week Trying to Steal From My Own Protocol
+# How I Spent a Week Trying to Steal From My Own Protocol (And Found Where It Breaks)
 
 ## I created 2,780 fake accounts, simulated 10 attack scenarios, and broke my own system. Here's what I discovered.
 
