@@ -1,4 +1,4 @@
-# 🍟 Greenhouse & Company
+# Greenhouse & Company
 
 **First Behavioral Oracle for DeFi**
 
