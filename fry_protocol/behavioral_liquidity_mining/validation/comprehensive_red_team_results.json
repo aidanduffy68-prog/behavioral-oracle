@@ -1,0 +1,102 @@
+{
+  "overall_detection_rate": 0.9913669064748202,
+  "total_wallets_tested": 2780,
+  "total_detected": 2756,
+  "passes_test": true,
+  "attack_analysis": {
+    "sybil_farming": {
+      "detection_rate": 1.0,
+      "total_wallets": 1000,
+      "detected_wallets": 1000,
+      "undetected_wallets": 0,
+      "severity": "HIGH"
+    },
+    "collusion_ring": {
+      "detection_rate": 1.0,
+      "total_wallets": 200,
+      "detected_wallets": 200,
+      "undetected_wallets": 0,
+      "severity": "HIGH"
+    },
+    "retention_gaming": {
+      "detection_rate": 1.0,
+      "total_wallets": 300,
+      "detected_wallets": 300,
+      "undetected_wallets": 0,
+      "severity": "MEDIUM"
+    },
+    "oracle_manipulation": {
+      "detection_rate": 0.76,
+      "total_wallets": 100,
+      "detected_wallets": 76,
+      "undetected_wallets": 24,
+      "severity": "CRITICAL"
+    },
+    "cross_chain_sybil": {
+      "detection_rate": 1.0,
+      "total_wallets": 250,
+      "detected_wallets": 250,
+      "undetected_wallets": 0,
+      "severity": "HIGH"
+    },
+    "mev_frontrunning": {
+      "detection_rate": 1.0,
+      "total_wallets": 150,
+      "detected_wallets": 150,
+      "undetected_wallets": 0,
+      "severity": "MEDIUM"
+    },
+    "incentive_gaming": {
+      "detection_rate": 1.0,
+      "total_wallets": 200,
+      "detected_wallets": 200,
+      "undetected_wallets": 0,
+      "severity": "MEDIUM"
+    },
+    "smart_contract_exploit": {
+      "detection_rate": 1.0,
+      "total_wallets": 50,
+      "detected_wallets": 50,
+      "undetected_wallets": 0,
+      "severity": "CRITICAL"
+    },
+    "governance_attack": {
+      "detection_rate": 1.0,
+      "total_wallets": 30,
+      "detected_wallets": 30,
+      "undetected_wallets": 0,
+      "severity": "HIGH"
+    },
+    "spam_attack": {
+      "detection_rate": 1.0,
+      "total_wallets": 500,
+      "detected_wallets": 500,
+      "undetected_wallets": 0,
+      "severity": "LOW"
+    }
+  },
+  "severity_analysis": {
+    "CRITICAL": [
+      "<__main__.AttackResult object at 0x1034ebce0>",
+      "<__main__.AttackResult object at 0x10361c380>"
+    ],
+    "HIGH": [
+      "<__main__.AttackResult object at 0x103577cb0>",
+      "<__main__.AttackResult object at 0x103585e50>",
+      "<__main__.AttackResult object at 0x1034ebe10>",
+      "<__main__.AttackResult object at 0x10360c250>"
+    ],
+    "MEDIUM": [
+      "<__main__.AttackResult object at 0x103585f90>",
+      "<__main__.AttackResult object at 0x1035739b0>",
+      "<__main__.AttackResult object at 0x10361c270>"
+    ],
+    "LOW": [
+      "<__main__.AttackResult object at 0x10360c150>"
+    ]
+  },
+  "recommendations": [
+    "CRITICAL PRIORITY: Improve detection for oracle_manipulation attacks (current: 76.0%)"
+  ],
+  "test_timestamp": "2025-10-25T22:52:38.646715"
+}
