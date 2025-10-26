@@ -1,6 +1,6 @@
-# Red Teaming Behavioral Oracles
+# How I Spent a Week Trying to Steal From My Own Protocol (And Found Where It Breaks)
 
-## I spent a week trying to steal from my own protocol. Here's what I found.
+## I created 2,780 fake accounts, simulated 10 attack scenarios, and broke my own system. Here's what I discovered.
 
 **The adversary isn't who you think.**
 
