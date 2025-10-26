@@ -4,7 +4,13 @@
 
 Most crypto projects get hacked because builders don't think like attackers.
 
-They build for the "happy path"—the normal, legitimate user flow. Then attackers find the edge cases, exploit the assumptions, and drain $100M.
+They build for the "happy path"—the normal, legitimate user flow. "A user deposits money, trades, maybe loses some, comes back, everything works fine." That's what they test.
+
+Then attackers find the edge cases: "What if someone creates 1,000 fake accounts and floods the system?" "What if someone manipulates the price data?" "What if 10 people coordinate to game the rewards?"
+
+They exploit the assumptions: "We assumed everyone would use the system honestly." "We assumed price data would be accurate." "We assumed users wouldn't coordinate attacks."
+
+And they drain $100M.
 
 I built FRY (a behavioral oracle for trader retention) assuming everything would be attacked. Then I proved it.
 
