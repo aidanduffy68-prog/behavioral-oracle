@@ -1,0 +1,42 @@
+{
+  "overall_detection_rate": 0.9995348837209302,
+  "total_wallets_tested": 2150,
+  "total_detected": 2149,
+  "passes_test": true,
+  "attack_analysis": {
+    "basic_sybil": {
+      "detection_rate": 1.0,
+      "total_wallets": 1000,
+      "detected_wallets": 1000,
+      "undetected_wallets": 0
+    },
+    "sophisticated_sybil": {
+      "detection_rate": 1.0,
+      "total_wallets": 500,
+      "detected_wallets": 500,
+      "undetected_wallets": 0
+    },
+    "cross_chain_sybil": {
+      "detection_rate": 0.9966666666666667,
+      "total_wallets": 300,
+      "detected_wallets": 299,
+      "undetected_wallets": 1
+    },
+    "temporal_sybil": {
+      "detection_rate": 1.0,
+      "total_wallets": 200,
+      "detected_wallets": 200,
+      "undetected_wallets": 0
+    },
+    "volume_gaming_sybil": {
+      "detection_rate": 1.0,
+      "total_wallets": 150,
+      "detected_wallets": 150,
+      "undetected_wallets": 0
+    }
+  },
+  "recommendations": [
+    "All attack types are well defended"
+  ],
+  "test_timestamp": "2025-10-25T22:33:24.000860"
+}
