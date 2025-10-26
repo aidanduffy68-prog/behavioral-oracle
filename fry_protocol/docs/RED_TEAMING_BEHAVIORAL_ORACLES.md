@@ -2,7 +2,11 @@
 
 ## I spent a week trying to steal from my own protocol. Here's what I found.
 
-Most crypto projects get hacked because builders don't think like attackers.
+**The adversary isn't who you think.**
+
+It's not just hackers trying to drain protocols. It's high-frequency traders front-running your orders. Market makers manipulating quotes to trigger stop losses. Credit card fraudsters creating 1,000 fake accounts to maximize rewards. Flash crash manipulators triggering mass liquidations. Coordination rings gaming retention metrics.
+
+Most crypto projects get hacked because builders don't think like these adversaries.
 
 They build for the "happy path"—the normal, legitimate user flow. "A user deposits money, trades, maybe loses some, comes back, everything works fine." That's what they test.
 
