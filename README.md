@@ -1,6 +1,6 @@
 # Greenhouse & Company
 
-**First Behavioral Oracle for DeFi**
+**First Behavioral Oracle for DeFi | Predicting trader psychology, not asset prices**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![FRY Protocol](https://img.shields.io/badge/FRY-Live%20on%20Arbitrum-green.svg)](https://arbiscan.io/address/0x492397d5912C016F49768fBc942d894687c5fe33)
